@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+//@import './app/app.component-theme.scss';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,7 +13,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$material-theming-primary: mat-palette($mat-red);
+$material-theming-primary: mat-palette($mat-indigo);
 $material-theming-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -24,9 +25,35 @@ $material-theming-theme: mat-light-theme($material-theming-primary, $material-th
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+$primary-dark: mat-palette($mat-purple);
+$accent-dark: mat-palette($mat-pink);
+$warn-dark: mat-palette($mat-red);
+
+
+$dark-theme: mat-dark-theme($primary-dark,
+    $accent-dark,
+    $warn-dark);
+//@include angular-material-theme($material-theming-theme);
+@include angular-material-theme($dark-theme);
+@mixin components-theme($theme) {
+    //@include app-component($theme);
+}
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+    @include components-theme($dark-theme);
+}
+.primary-theme{
 @include angular-material-theme($material-theming-theme);
+    @include components-theme($material-theming-theme);
+}
+
 
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@for $i from 0 through 100 {
+  .w-#{5 * $i} {
+    width: 0% + 5 * $i !important;
+  }
+}
