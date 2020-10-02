@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sharedService : SharedService
+  ) { }
 
   ngOnInit(): void {
+  }
+  changeTheme(themeName: string) {
+    debugger;
+    this.sharedService.emitChangedTheme(themeName);
   }
 
 }

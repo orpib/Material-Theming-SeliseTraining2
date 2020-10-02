@@ -1,1 +1,19 @@
-<p>toolbar works!</p>
+<mat-toolbar color="primary">
+  <div class="w-100" fxLayout="row" fxLayoutAlign="space-between">
+
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon btn-mdl"
+      aria-label="Example icon-button with share icon">
+      <mat-icon>format_color_fill</mat-icon>
+    </button>
+
+  </div>
+
+  <mat-menu #menu="matMenu">
+    <button (click)="changeTheme('primary-theme')" mat-menu-item>Primary Light Theme</button>
+    <button (click)="changeTheme('dark-theme')" mat-menu-item>Primary Dark Theme</button>
+    <button (click)="changeTheme('custom-dark-theme')" mat-menu-item>Custom Color Palette Theme</button>
+  </mat-menu>
+
+</mat-toolbar>
