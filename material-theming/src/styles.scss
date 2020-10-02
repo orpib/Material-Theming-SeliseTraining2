@@ -12,22 +12,46 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$material-theming-primary: mat-palette($mat-indigo);
-$material-theming-accent: mat-palette($mat-pink, A200, A100, A400);
+$primary-light: mat-palette($mat-pink);
+$primary-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$material-theming-warn: mat-palette($mat-red);
+$primary-accent: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$material-theming-theme: mat-light-theme($material-theming-primary, $material-theming-accent, $material-theming-warn);
+$primary-theme: mat-light-theme($primary-light, $primary-accent, $primary-accent);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($material-theming-theme);
-//@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+$primary-dark: mat-palette($mat-purple);
+$accent-dark: mat-palette($mat-pink);
+$warn-dark: mat-palette($mat-red);
+
+
+$dark-theme: mat-dark-theme($primary-dark,
+    $accent-dark,
+    $warn-dark);
+
+
+//@include angular-material-theme($dark-theme);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@mixin components-theme($theme) {
+   // @include app-dashboard($theme);
+}
+
+
+.light-theme {
+    @include angular-material-theme($primary-theme);
+    @include components-theme($primary-theme);
+}
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+    @include components-theme($dark-theme);
+}

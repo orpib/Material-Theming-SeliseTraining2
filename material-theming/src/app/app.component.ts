@@ -9,13 +9,14 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 })
 export class AppComponent implements OnInit {
     title = 'material-theming';
-    theme = 'light-theme';
+    theme = 'dark-theme';
     overlay: HTMLElement;
     constructor(private overlayContainer: OverlayContainer) {
         this.overlay = overlayContainer.getContainerElement();
 
     }
     ngOnInit(): void {
-        this.overlayContainer.getContainerElement().classList.add(this.theme);
+        //this.overlayContainer.getContainerElement().classList.add(this.theme);
+        this.overlay.classList.add('dark-theme');
     }
 }

@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './app-dashboard/dashboard.component';
 import { TopNavComponent } from './app-top-nav/top-nav.component';
 import { MaterialModule } from './material/material.module';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -22,8 +23,9 @@ import { MaterialModule } from './material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-      BrowserAnimationsModule,
-      MaterialModule
+    BrowserAnimationsModule,
+      MaterialModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]
