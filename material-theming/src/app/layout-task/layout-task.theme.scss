@@ -1,0 +1,30 @@
+@import "~@angular/material/theming";
+
+@mixin app-layout-task($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+    .bg-white {
+        background-color: rgb(235, 226, 226);
+    }
+    .bg-accent {
+        background-color: mat-color($accent);
+        .mat-select-value {
+            span{
+        color: black !important;
+        }
+}
+    }
+    .bg-primary {
+        background-color: mat-color($primary);
+    }
+    .bg-warn {
+        background-color: mat-color($warn);
+    }
+    .bg-success {
+        background-color: #8bf78b;
+    }
+}
