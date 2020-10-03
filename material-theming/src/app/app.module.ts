@@ -8,6 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SharedModule } from './shared/shared.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     BrowserAnimationsModule,
     OverlayModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
