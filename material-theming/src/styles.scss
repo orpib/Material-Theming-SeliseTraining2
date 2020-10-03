@@ -9,6 +9,7 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
+@import './app/toolbar/toolbar.component-theme.scss';
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -150,7 +151,7 @@ $custom-theme: mat-dark-theme($primary-custom,
 
 //@include angular-material-theme($dark-theme);
 @mixin components-theme($theme) {
-    //@include app-component($theme);
+    @include app-toolbar($theme);
 }
 .dark-theme {
     @include angular-material-theme($dark-theme);

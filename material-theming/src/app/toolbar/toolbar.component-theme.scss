@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+@mixin app-toolbar($theme) {
+
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+
+
+
+    .dark{
+        background-color: mat-color($background);
+        h1{
+            color: mat-color($accent);
+        }
+    }
+.mat-menu-item{
+color: mat-color($accent);
+}
+}

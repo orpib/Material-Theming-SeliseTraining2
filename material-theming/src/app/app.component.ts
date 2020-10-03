@@ -10,7 +10,7 @@ import { SharedService } from '../app/shared/shared.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'material-theming';
-  theme = 'primary-theme';
+  theme = 'dark-theme';
   overlay: HTMLElement;
   subscribingToThemeChange: Subscription;
 
@@ -32,7 +32,27 @@ export class AppComponent implements OnInit, OnDestroy {
     //this.overlayContainer.getContainerElement().classList.add(this.theme);
     //this.overlay.classList.add('dark-theme');
     this.subscribingToThemeChange =this.sharedService.themeChangerAsObservable.subscribe(theme => {
-    this.theme = theme;
+      this.theme = theme;
+      this.changeTheme();
     });
+  }
+
+  changeTheme() {
+    debugger
+    if (this.overlay.classList.contains('dark-theme')) {
+      this.overlay.classList.remove('dark-theme');
+      this.overlay.classList.add(this.theme);
+    } else if (this.overlay.classList.contains('primary-theme')) {
+      this.overlay.classList.remove('primary-theme');
+      this.overlay.classList.add(this.theme);
+    }
+    else if (this.overlay.classList.contains('custom-dark-theme')) {
+      this.overlay.classList.remove('custom-dark-theme');
+      this.overlay.classList.add(this.theme);
+    }
+    else {
+      this.overlay.classList.add(this.theme);
+    }
+    debugger
   }
 }
