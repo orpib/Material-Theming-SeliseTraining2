@@ -9,13 +9,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutTaskComponent } from './layout-task/layout-task.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LayoutTaskComponent
   ],
   imports: [
     BrowserModule,

@@ -36,6 +36,7 @@ $dark-theme: mat-dark-theme($primary-dark,
     $warn-dark);
 //@include angular-material-theme($material-theming-theme);
 
+
 $md-custom-primary: (
     50 : #e8eaf6,
     100 : #c5cbe9,
@@ -165,6 +166,7 @@ $custom-theme: mat-dark-theme($primary-custom,
     @include angular-material-theme($custom-theme);
     @include components-theme($custom-theme);
 }
+//@include components-theme($dark-theme);
 
 
 

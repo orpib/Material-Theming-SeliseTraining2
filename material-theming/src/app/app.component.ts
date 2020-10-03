@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
     debugger
     this.overlay = this.overlayContainer.getContainerElement();
     //this.overlayContainer.getContainerElement().classList.add(this.theme);
-    //this.overlay.classList.add('dark-theme');
+    this.overlay.classList.add(this.theme);
     this.subscribingToThemeChange =this.sharedService.themeChangerAsObservable.subscribe(theme => {
       this.theme = theme;
       this.changeTheme();

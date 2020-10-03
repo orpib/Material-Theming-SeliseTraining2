@@ -1,9 +1,10 @@
 <div [class]="theme">
   <app-toolbar></app-toolbar>
   <app-dashboard></app-dashboard>
-  <div [class]="theme" class="p-16 m-8">
+  <div fxLayout="row" fxLayoutAlign="center center"[class]="theme" class="p-16 m-8">
     <button mat-raised-button class="m-8" color="primary">Primary</button>
     <button mat-raised-button class="m-8" color="accent">Accent</button>
     <button mat-raised-button class="m-8" color="warn">Warn</button>
   </div>
+<app-layout-task></app-layout-task>
 </div>
