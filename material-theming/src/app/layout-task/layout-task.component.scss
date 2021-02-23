@@ -10,11 +10,13 @@
     height: 40px;
     border-radius: 50%;
     min-width: 40px;
+    min-height: 40px;
     mat-icon {
         height: 24px;
         font-size: 24px;
         width: 24px;
     }
+    z-index: 1;
 }
 .bg-1 {
     background-color: blueviolet;
@@ -32,12 +34,43 @@
 //Second Task
 .schedule {
     padding: 16px;
-    .schedule-card {
-        height: 40px;
+    .card {
+        height: fit-content;
+        padding: 16px;
+        background: greenyellow;
     }
     ul {
         li {
             list-style-type: none;
+        }
+    }
+    .schedule-item {
+        position: relative;
+        overflow: hidden;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background: grey;
+        }
+        &::before {
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 36px;
+        }
+        &::after {
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 36px;
+        }
+    }
+    .schedule-item {
+        &:first-child {
+            &::before {
+                top: 50%;
+            }
         }
     }
 }
