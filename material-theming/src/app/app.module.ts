@@ -10,7 +10,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutTaskComponent } from './layout-task/layout-task.component';
-
+import { AvatarModule } from 'ngx-avatar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { LayoutTaskComponent } from './layout-task/layout-task.component';
     BrowserAnimationsModule,
     OverlayModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    AvatarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
